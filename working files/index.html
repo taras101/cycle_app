@@ -8,7 +8,7 @@
 	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 </head>
 <body>
-	<div id="map-canvas"/>
+	
 	<header>
 		<div class="innerWrapper">
 		<h1>Cycling App</h1>
@@ -37,10 +37,11 @@
 		</div>
 	</header>
 
+	<div id="map-canvas"></div>
 
-	<div class="overlay overlay1 close">
+	<div class="overlay overlay1 closeIt">
 		<div class="modal modal1">
-		 	<img class="close" src="i/icon_45886.png"/>
+		 	<img class="close closeIt" src="i/icon_45886.png"/>
 		  <div class="options">
 		    <div class="first">
 		      <p>1. Type of Issue</p>
@@ -64,25 +65,26 @@
 		    <!-- end of second div -->
 		    <div class="third">
 		      <p>3. Locate Issue in Map</p>
-		      <button type="button">Locate</button>
+		      <button type="button" class="closeIt">Locate</button>
 		    </div>
 		  </div>
 		</div>
 	</div>
 
-	<div class="overlay overlay2 close">
+	<div class="overlay overlay2 closeIt">
 		<div class="modal modal2">
-			<img class="close" src="i/icon_45886.png"/>
+			<img class="close closeIt" src="i/icon_45886.png"/>
 	    <h2>Welcome!</h2>
 		  <div class="intro">
 		    <a href="#"><img src="i/icon_8603.png" class="left-arrow" /></a>
 		    <img src="i/kitten.jpeg" class="kitten-image"/>
 		    <a href="#"><img src="i/icon_8604.png" class="right-arrow" /></a>
 		  </div>
-		  <button type="button">Don't show again</button>
+		  <button class="closeIt" type="button">Don't show again</button>
 		</div>
 	</div>
-			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript"src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCON7pYLKhdqpsuLpQ8ZvJbi80ZmPV2y4Q"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="script.js"></script>
 	
 </body>
