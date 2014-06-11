@@ -22,6 +22,13 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 img {
 	max-width:100%;
 }
+/*====================================================================================
+		                          Variables 
+====================================================================================*/ 
+//z-index
+$min:333;
+$mid:555;
+$max:999;
 
 
 /*====================================================================================
@@ -39,7 +46,6 @@ body {
 
 #map-canvas { 
   height: 100%; 
-  background:blue;
 }
 
 .innerWrapper {
@@ -59,6 +65,7 @@ header {
 	padding: 25px;
 	padding-bottom: 0;
 	background: white;
+	z-index: $max;
 }
 
 h1 {
@@ -110,6 +117,7 @@ ul li.menuItem:nth-child(2n){
 }
 
 ul.legend {
+	z-index: $max;
 	display: none;
 	position: absolute;
 	font-size: 20px;
@@ -144,6 +152,7 @@ i {
 ====================================================================================*/ 
 
 .overlay {
+	z-index: $max;
   position: fixed;
   top: 0;
   bottom: 0;

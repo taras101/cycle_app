@@ -1,6 +1,19 @@
+$(function(){
 
+	function initialize() {
+	    var mapOptions = {
+	      center: new google.maps.LatLng(43.654638 ,-79.382772),
+	      zoom: 14
+	    };
+	    var map = new google.maps.Map(document.getElementById("map-canvas"),
+	        mapOptions);
 
-$(document).ready(function(){
+	    var bikeLayer = new google.maps.BicyclingLayer();
+	     bikeLayer.setMap(map);
+
+	  }
+	  google.maps.event.addDomListener(window, 'load', initialize);
+
 	//show legend
 	$(".item2").on("click", function(){
 		$("ul.legend").slideToggle(100);
