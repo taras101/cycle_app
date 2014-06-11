@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 100% }
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCON7pYLKhdqpsuLpQ8ZvJbi80ZmPV2y4Q">
+    </script>
+     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=visualization"></script>
+    <script type="text/javascript">
+      function initialize() {
+        var map, pointarray, heatmap;
+        // heatspot data
+        var taxiData = [
+        new google.maps.LatLng(43.64678970890272, -79.39536094665527),
+        new google.maps.LatLng(43.64678970890272, -79.39536094665527),
+        new google.maps.LatLng(43.64678970890272, -79.39536094665527),
+        new google.maps.LatLng(43.64678970890272, -79.39536094665527),
+        new google.maps.LatLng(43.64678970890272, -79.39536094665527),
+        new google.maps.LatLng(43.64678970890272, -79.39536094665527),
+        new google.maps.LatLng(43.64678970890272, -79.39536094665527),
+        new google.maps.LatLng(43.64678970890272, -79.39536094665527),
+        new google.maps.LatLng(43.64678970890272, -79.39536094665527),
+        new google.maps.LatLng(43.64678970890272, -79.39536094665527),
+
+        ]
+        var mapOptions = {
+          center: new google.maps.LatLng(43.654638 ,-79.382772),
+          zoom: 14
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+        // add bikemap layer
+        var bikeLayer = new google.maps.BicyclingLayer();
+         bikeLayer.setMap(map);
+
+        // var trafficLayer = new google.maps.TrafficLayer();
+        // trafficLayer.setMap(map);
+
+        var pointArray = new google.maps.MVCArray(taxiData);
+
+        heatmap = new google.maps.visualization.HeatmapLayer({
+          data: pointArray
+        });
+       heatmap.setMap(map);
+
+       var infowindow = new google.maps.InfoWindow();
+
+
+       // alert when click
+       google.maps.event.addListener(map, 'click', function(event) {
+          alert('Is this the spot?' + event.latLng);
+          taxiData.push("new google.maps.LatLng" + event.latLng);
+          // console.log(taxiData);
+            });
+      }
+
+// function toggleHeatmap() {
+//   heatmap.setMap(heatmap.getMap() ? null : map);
+// }
+
+// function changeGradient() {
+//   var gradient = [
+//     'rgba(0, 255, 255, 0)',
+//     'rgba(0, 255, 255, 1)',
+//     'rgba(0, 191, 255, 1)',
+//     'rgba(0, 127, 255, 1)',
+//     'rgba(0, 63, 255, 1)',
+//     'rgba(0, 0, 255, 1)',
+//     'rgba(0, 0, 223, 1)',
+//     'rgba(0, 0, 191, 1)',
+//     'rgba(0, 0, 159, 1)',
+//     'rgba(0, 0, 127, 1)',
+//     'rgba(63, 0, 91, 1)',
+//     'rgba(127, 0, 63, 1)',
+//     'rgba(191, 0, 31, 1)',
+//     'rgba(255, 0, 0, 1)'
+//   ]
+//   heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
+// }
+
+// function changeRadius() {
+//   heatmap.set('radius', heatmap.get('radius') ? null : 20);
+// }
+
+// function changeOpacity() {
+//   heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
+// }
+
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"/>
+  </body>
+</html>
