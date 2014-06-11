@@ -1,39 +1,38 @@
+
+
 $(document).ready(function(){
-	// var $closeIt = 	function(){
-	// 	$(".overlay").fadeOut();
-	// };	
+	//show legend
+	$(".item2").on("click", function(){
+		$("ul.legend").slideToggle(100);
+	});
 
-	// $(".overlay").on("click", function(e){
-	// 	// if ( $(e.currentTarget).hasClass( "close" ) ) {
-	// 	// 	$closeIt();
-	// 	// }
-	// 	console.log("click");
-	// });
-
-	// $(document).on("keydown", function(e){
-	// 	if (e.which == 27) {
-	// 		$closeIt();
-	// 	}
-	// });
-
+	//open issue submission modal
 	$(".item1").on("click", function(){
 		$(".overlay1").fadeIn();
 	});
 
-	$(".item2").on("click", function(){
-		$("ul.legend").toggle(100);
-	});
-
-
-
+	//open help/intro modal
 	$(".item3").on("click", function(){
 		$(".overlay2").fadeIn();
 	});
 
-	$(".overlay").on("click", function(e){
-		e.preventDefault();
-		if($(e.currentTarget).hasClass("close")){
-			$(".overlay").fadeOut();
+
+	var $closeModal = function(){
+		$(".overlay").fadeOut();
+	};
+
+	$(document).on("keydown", function(e){
+		if(e.which == 27) {
+			$closeModal();
 		}
 	});
+
+	$(".overlay").on("click", function(e){
+		if($(e.target).hasClass("closeIt")){
+			$closeModal();
+		}
+	});
+
+
 });
+
