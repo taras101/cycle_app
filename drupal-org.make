@@ -30,6 +30,9 @@ projects[references][version] = 2.1
 projects[token][subdir] = contrib
 projects[token][version] = 1.5
 
+projects[services][subdir] = contrib
+projects[services][version] = 3.7
+
 projects[strongarm][subdir] = contrib
 projects[strongarm][version] = 2.0
 
