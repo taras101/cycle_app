@@ -24,6 +24,9 @@ projects[globalredirect][version] = 1.5
 projects[jquery_update][subdir] = contrib
 projects[jquery_update][version] = 2.3
 
+projects[libraries][subdir] = contrib
+projects[libraries][version] = 2.2
+
 projects[references][subdir] = contrib
 projects[references][version] = 2.1
 

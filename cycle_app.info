@@ -8,6 +8,8 @@ core = 7.x
 ; Contrib
 dependencies[] = admin_menu
 dependencies[] = admin_menu_toolbar
+dependencies[] = services
+dependencies[] = rest_server
 dependencies[] = views
 
 ; Core
