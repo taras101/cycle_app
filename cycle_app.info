@@ -9,6 +9,7 @@ core = 7.x
 dependencies[] = admin_menu
 dependencies[] = admin_menu_toolbar
 dependencies[] = services
+dependencies[] = services_views
 dependencies[] = rest_server
 dependencies[] = views
 

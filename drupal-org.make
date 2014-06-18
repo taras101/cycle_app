@@ -36,6 +36,9 @@ projects[token][version] = 1.5
 projects[services][subdir] = contrib
 projects[services][version] = 3.7
 
+projects[services_views][subdir] = contrib
+projects[services_views][version] = 1.0
+
 projects[strongarm][subdir] = contrib
 projects[strongarm][version] = 2.0
 
